@@ -1,0 +1,59 @@
+body {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+#globalContainer{
+  display: grid;
+  grid-template-columns: 20% 75%;
+}
+#countryContainer{
+  display: grid;
+  grid-template-columns: 48% 48%;
+  min-height: 35rem;
+}
+.dataContainer{
+  margin-top: 1rem;
+  display: grid;
+  grid-template-columns: 20% 75%;
+}
+.canvasContainer div *{
+  max-height: 80%;
+  max-width: 80%;
+}
+.errorMessage{
+  color: red;
+  font-weight: bold;
+}
+
+/*Style tab links*/
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/*style the tab content (and add height:100% for full page content)*/
+.tabcontent {
+  color: white;
+  background-color: lightgray;
+  max-height: 20rem;
+
+  display: none;
+  padding: 100px 20px;
+}
+#globalChart{
+  background-color: lightgray;
+
+}

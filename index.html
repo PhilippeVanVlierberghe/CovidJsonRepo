@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Covid19 tracker using fetch api</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <!-- 
+        <script type="module" src="js/Main.js" defer></script>
+    -->
+    <script src="js/loadData.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+    <h2>Covid APP</h2>
+    <div id="globalContainer">
+        <div id="kpiContainer">
+            <p>Global KPI's</p>
+            <p id="date"></p>
+            <p id="newConfirmed"></p>
+            <p id="newDeaths"></p>
+            <p id="totalConfirmed"></p>
+            <p id="totalDeaths"></p>
+            <p id="totalRecoverd"></p>
+        </div>
+        <div id="globalChartcontainer">
+            <canvas id="globalChart"></canvas>
+        </div>
+    </div>
+    <h2>Compare the data for two given Countries</h2>
+    <p>Use the dropdown boxes to select two countries to compare or type the country in the input field on the left.</p>
+    <div id="countryContainer">
+        <div class="country">
+            <form id="myFormA">
+                <input type="text" id="countryA" placeholder="Country Name" required>
+                <select name="countryListA" id="countryListA">
+                </select>
+                <input type="submit" value="Get Data">
+            </form>
+            <div class="dataContainer">
+                <div class="kpiContainer">
+                    <p>Country KPI's</p>
+                    <p id="errorMessageA" class="errorMessage"></p>
+                    <p id="c_dateA"></p>
+                    <p id="c_totalConfirmedA"></p>
+                    <p id="c_totalDeathsA"></p>
+                    <p id="c_recoverdA"></p>
+                </div>
+                <div class="canvasContainer">
+                    <button class="tablink" onclick="openPage('deathsA', this, 'red','A')">Deaths</button>
+                    <button class="tablink" onclick="openPage('casesA', this, 'green','A')" id="defaultOpenA">Cases</button>
+                    <button class="tablink" onclick="openPage('pieA', this, 'blue','A')">Pie</button>
+                    <div id="deathsA" class="tabcontent"><canvas id="myChart1A"></canvas></div>
+                    <div id="casesA" class="tabcontent"><canvas id="myChart2A"></canvas></div>
+                    <div id="pieA" class=" tabcontent"><canvas id="myChart3A"></canvas></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="country">
+            <form id="myFormB">
+                <input type="text" id="countryB" placeholder="Country Name" required>
+                <select name="countryListB" id="countryListB">
+                </select>
+                <input type="submit" value="Get Data">
+            </form>
+            <div class="dataContainer">
+                <div class="kpiContainer">
+                    <p>Country KPI's</p>
+                    <p id="errorMessageB" class="errorMessage"></p>
+                    <p id="c_dateB"></p>
+                    <p id="c_totalConfirmedB"></p>
+                    <p id="c_totalDeathsB"></p>
+                    <p id="c_recoverdB"></p>
+                </div>
+                <div class="canvasContainer">
+                    <button class="tablink" onclick="openPage('deathsB', this, 'red','B')">Deaths</button>
+                    <button class="tablink" onclick="openPage('casesB', this, 'green','B')" id="defaultOpenB">Cases</button>
+                    <button class="tablink" onclick="openPage('pieB', this, 'blue','B')">Pie</button>
+                    <div id="deathsB" class="tabcontent"><canvas id="myChart1B"></canvas></div>
+                    <div id="casesB" class="tabcontent"><canvas id="myChart2B"></canvas></div>
+                    <div id="pieB" class=" tabcontent"><canvas id="myChart3B"></canvas></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Data source<br>
+            <a href="https://covid19api.com/">covid19api.com</a>
+        </p>
+    </footer>
+
+</body>
+
+</html>
