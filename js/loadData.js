@@ -236,7 +236,7 @@ function createCountryOptions() {
 }
 
 function openPage(pageName, elmnt, color, group) {
-    var i, tabcontent, tablinks;
+    let i, tabcontent, tablinks;
     tabcontent = document.getElementsByClassName("tabcontent");
     for (i = 0; i < tabcontent.length; i++) {
         if (tabcontent[i].id.slice(-1) === group) tabcontent[i].style.display = "none";
